@@ -1,0 +1,63 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw tables loaded from MinIO by the Airflow pipeline"
+    schema: raw
+    tables:
+      - name: sales
+        description: "Raw sales transactions from postgres-source"
+        columns:
+          - name: sale_id
+            description: "Primary key"
+            tests:
+              - not_null
+              - unique
+          - name: product_id
+            tests:
+              - not_null
+          - name: sale_date
+            tests:
+              - not_null
+          - name: quantity
+          - name: total_amount
+
+      - name: products
+        description: "Product master data from postgres-source"
+        columns:
+          - name: product_id
+            tests:
+              - not_null
+              - unique
+          - name: name
+          - name: category
+          - name: price
+
+      - name: reviews
+        description: "Customer reviews loaded from MinIO landing-zone CSV"
+        columns:
+          - name: review_id
+            tests:
+              - not_null
+          - name: product_id
+          - name: rating
+          - name: review_text
+
+models:
+  - name: fact_daily_sales
+    description: "Aggregated daily sales fact table for analytics"
+    columns:
+      - name: date
+        description: "Sale date"
+      - name: product_id
+        description: "Product identifier"
+      - name: product_name
+        description: "Product name from products table"
+      - name: product_category
+        description: "Product category"
+      - name: total_quantity_sold
+        description: "Total units sold on this date for this product"
+      - name: total_revenue
+        description: "Total revenue on this date for this product"
+      - name: avg_review_rating
+        description: "Average customer review rating for this product"

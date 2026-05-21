@@ -1,0 +1,11 @@
+apache-airflow-providers-postgres
+pandas
+pyarrow
+psycopg2-binary
+sqlalchemy==1.4.54
+minio
+requests
+dbt-core==1.7.14
+dbt-postgres==1.7.14
+great-expectations==0.18.8
+pytest

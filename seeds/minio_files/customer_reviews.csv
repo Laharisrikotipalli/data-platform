@@ -1,0 +1,21 @@
+review_id,product_id,rating,review_text
+1,1,5,Excellent laptop very fast and reliable
+2,1,4,Great performance but pricey
+3,2,3,Average mouse works fine
+4,2,4,Good value for money
+5,3,5,Very comfortable chair
+6,3,4,Good quality but assembly took time
+7,4,5,Love this mug dishwasher safe
+8,4,4,Design is nice
+9,5,3,Works as expected
+10,5,5,Very durable cable
+11,6,4,Good notebook for work
+12,6,5,Perfect for meetings
+13,7,5,Amazing display quality
+14,7,4,Good monitor for the price
+15,8,5,Mechanical keyboard feels great
+16,8,4,RGB lighting is nice
+17,9,4,Desk mat is very comfortable
+18,9,3,Good but cheap build quality
+19,10,5,Excellent webcam quality
+20,10,4,Clear video and good microphone
