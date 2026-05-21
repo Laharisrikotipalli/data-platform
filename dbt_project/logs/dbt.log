@@ -1223,3 +1223,1010 @@ having count(*) > 1
 [0m07:23:36.431805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9efc5d46d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef870dcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef89f7a00>]}
 [0m07:23:36.434485 [debug] [MainThread]: Flushing usage events
 [0m07:23:44.535935 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m12:16:48.825653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3a0716a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d37dc07c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d37dc0550>]}
+
+
+============================== 12:16:48.834731 | c31d1e46-b90a-4fd2-a9b2-6318852998aa ==============================
+[0m12:16:48.834731 [info ] [MainThread]: Running with dbt=1.7.14
+[0m12:16:48.837781 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:49.408189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3a59a0d0>]}
+[0m12:16:49.486716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d36552370>]}
+[0m12:16:49.489957 [info ] [MainThread]: Registered adapter: postgres=1.7.14
+[0m12:16:49.544260 [debug] [MainThread]: checksum: ccbe0bccecb23e0b0bcca76d525b7d642e28acd474046360f7f33e61c6a2b781, vars: {}, profile: , target: , version: 1.7.14
+[0m12:16:51.113741 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:16:51.115389 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:16:51.122576 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d361b50d0>]}
+[0m12:16:51.187073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3630f520>]}
+[0m12:16:51.189435 [info ] [MainThread]: Found 1 model, 7 tests, 3 sources, 0 exposures, 0 metrics, 515 macros, 0 groups, 0 semantic models
+[0m12:16:51.192075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3630f460>]}
+[0m12:16:51.200553 [info ] [MainThread]: 
+[0m12:16:51.207750 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:16:51.213843 [debug] [ThreadPool]: Acquiring new postgres connection 'list_warehousedb'
+[0m12:16:51.245522 [debug] [ThreadPool]: Using postgres connection "list_warehousedb"
+[0m12:16:51.251360 [debug] [ThreadPool]: On list_warehousedb: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m12:16:51.255349 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:16:51.284991 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m12:16:51.289451 [debug] [ThreadPool]: On list_warehousedb: Close
+[0m12:16:51.298452 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehousedb, now list_warehousedb_public)
+[0m12:16:51.307274 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:16:51.309352 [debug] [ThreadPool]: On list_warehousedb_public: BEGIN
+[0m12:16:51.311114 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:16:51.317062 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:16:51.318938 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:16:51.320627 [debug] [ThreadPool]: On list_warehousedb_public: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb_public"} */
+select
+      'warehousedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m12:16:51.334173 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m12:16:51.337083 [debug] [ThreadPool]: On list_warehousedb_public: ROLLBACK
+[0m12:16:51.339530 [debug] [ThreadPool]: On list_warehousedb_public: Close
+[0m12:16:51.345502 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.347354 [debug] [MainThread]: On master: BEGIN
+[0m12:16:51.349048 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:16:51.353893 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:16:51.355665 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.357427 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:16:51.372864 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m12:16:51.376360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d360cd760>]}
+[0m12:16:51.378753 [debug] [MainThread]: On master: ROLLBACK
+[0m12:16:51.380932 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.382968 [debug] [MainThread]: On master: BEGIN
+[0m12:16:51.385910 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:16:51.388171 [debug] [MainThread]: On master: COMMIT
+[0m12:16:51.391063 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.392995 [debug] [MainThread]: On master: COMMIT
+[0m12:16:51.396864 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:16:51.398837 [debug] [MainThread]: On master: Close
+[0m12:16:51.401491 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:16:51.403693 [info ] [MainThread]: 
+[0m12:16:51.417247 [debug] [Thread-1  ]: Began running node model.data_platform.fact_daily_sales
+[0m12:16:51.420239 [info ] [Thread-1  ]: 1 of 1 START sql table model public.fact_daily_sales ........................... [RUN]
+[0m12:16:51.423719 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehousedb_public, now model.data_platform.fact_daily_sales)
+[0m12:16:51.426228 [debug] [Thread-1  ]: Began compiling node model.data_platform.fact_daily_sales
+[0m12:16:51.437913 [debug] [Thread-1  ]: Writing injected SQL for node "model.data_platform.fact_daily_sales"
+[0m12:16:51.453942 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (compile): 12:16:51.428240 => 12:16:51.453484
+[0m12:16:51.456754 [debug] [Thread-1  ]: Began executing node model.data_platform.fact_daily_sales
+[0m12:16:51.505441 [debug] [Thread-1  ]: Writing runtime sql for node "model.data_platform.fact_daily_sales"
+[0m12:16:51.520354 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.523190 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: BEGIN
+[0m12:16:51.525134 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:16:51.530232 [debug] [Thread-1  ]: SQL status: BEGIN in 0.0 seconds
+[0m12:16:51.531961 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.533958 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+
+  
+    
+
+  create  table "warehousedb"."public"."fact_daily_sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- dbt_project/models/fact_daily_sales.sql
+-- Aggregated daily sales fact table joining sales, products, and reviews
+
+
+
+SELECT
+    s.sale_date::DATE                       AS date,
+    s.product_id,
+    p.name                                  AS product_name,
+    p.category                              AS product_category,
+    SUM(s.quantity)                         AS total_quantity_sold,
+    SUM(s.total_amount)                     AS total_revenue,
+    AVG(r.rating)                           AS avg_review_rating
+FROM
+    raw.sales s
+    JOIN raw.products p
+        ON s.product_id = p.product_id
+    LEFT JOIN raw.reviews r
+        ON s.product_id = r.product_id
+GROUP BY
+    s.sale_date::DATE,
+    s.product_id,
+    p.name,
+    p.category
+ORDER BY
+    date DESC,
+    product_id
+  );
+  
+[0m12:16:51.564232 [debug] [Thread-1  ]: SQL status: SELECT 5 in 0.0 seconds
+[0m12:16:51.570915 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.572243 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+alter table "warehousedb"."public"."fact_daily_sales" rename to "fact_daily_sales__dbt_backup"
+[0m12:16:51.575719 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:16:51.579956 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.581167 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+alter table "warehousedb"."public"."fact_daily_sales__dbt_tmp" rename to "fact_daily_sales"
+[0m12:16:51.582603 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:16:51.611249 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: COMMIT
+[0m12:16:51.616383 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.620434 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: COMMIT
+[0m12:16:51.628925 [debug] [Thread-1  ]: SQL status: COMMIT in 0.0 seconds
+[0m12:16:51.651258 [debug] [Thread-1  ]: Applying DROP to: "warehousedb"."public"."fact_daily_sales__dbt_backup"
+[0m12:16:51.661615 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:16:51.664529 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+drop table if exists "warehousedb"."public"."fact_daily_sales__dbt_backup" cascade
+[0m12:16:51.674935 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:16:51.678867 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (execute): 12:16:51.458487 => 12:16:51.678645
+[0m12:16:51.680870 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: Close
+[0m12:16:51.683626 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c31d1e46-b90a-4fd2-a9b2-6318852998aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d361487f0>]}
+[0m12:16:51.685918 [info ] [Thread-1  ]: 1 of 1 OK created sql table model public.fact_daily_sales ...................... [[32mSELECT 5[0m in 0.26s]
+[0m12:16:51.688049 [debug] [Thread-1  ]: Finished running node model.data_platform.fact_daily_sales
+[0m12:16:51.691087 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.692770 [debug] [MainThread]: On master: BEGIN
+[0m12:16:51.694521 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:16:51.699452 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:16:51.701101 [debug] [MainThread]: On master: COMMIT
+[0m12:16:51.703005 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:51.704970 [debug] [MainThread]: On master: COMMIT
+[0m12:16:51.708109 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:16:51.710384 [debug] [MainThread]: On master: Close
+[0m12:16:51.712583 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:16:51.714399 [debug] [MainThread]: Connection 'model.data_platform.fact_daily_sales' was properly closed.
+[0m12:16:51.716038 [info ] [MainThread]: 
+[0m12:16:51.717724 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.51 seconds (0.51s).
+[0m12:16:51.719756 [debug] [MainThread]: Command end result
+[0m12:16:51.755781 [info ] [MainThread]: 
+[0m12:16:51.758065 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:16:51.759836 [info ] [MainThread]: 
+[0m12:16:51.762249 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m12:16:51.766013 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.046255, "process_user_time": 3.919365, "process_kernel_time": 0.700027, "process_mem_max_rss": "113776", "process_in_blocks": "99824", "process_out_blocks": "944"}
+[0m12:16:51.768110 [debug] [MainThread]: Command `dbt run` succeeded at 12:16:51.767862 after 3.05 seconds
+[0m12:16:51.770807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3a0716a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d36171f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1d3630f790>]}
+[0m12:16:51.772798 [debug] [MainThread]: Flushing usage events
+[0m12:16:58.297369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4fbfa6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e501330d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4d9256a0>]}
+
+
+============================== 12:16:58.304544 | 03e9c71a-d4bc-4e2c-af20-f6b2d55e2601 ==============================
+[0m12:16:58.304544 [info ] [MainThread]: Running with dbt=1.7.14
+[0m12:16:58.306607 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:58.630383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4dfaf7f0>]}
+[0m12:16:58.693177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4c0057f0>]}
+[0m12:16:58.701242 [info ] [MainThread]: Registered adapter: postgres=1.7.14
+[0m12:16:58.767929 [debug] [MainThread]: checksum: ccbe0bccecb23e0b0bcca76d525b7d642e28acd474046360f7f33e61c6a2b781, vars: {}, profile: , target: , version: 1.7.14
+[0m12:17:00.004611 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:17:00.006765 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:17:00.019027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4bd389a0>]}
+[0m12:17:00.039879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4bea5640>]}
+[0m12:17:00.043788 [info ] [MainThread]: Found 1 model, 7 tests, 3 sources, 0 exposures, 0 metrics, 515 macros, 0 groups, 0 semantic models
+[0m12:17:00.047113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4bea57c0>]}
+[0m12:17:00.052507 [info ] [MainThread]: 
+[0m12:17:00.054775 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:17:00.057735 [debug] [ThreadPool]: Acquiring new postgres connection 'list_warehousedb_public'
+[0m12:17:00.075014 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:17:00.077154 [debug] [ThreadPool]: On list_warehousedb_public: BEGIN
+[0m12:17:00.079637 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:00.088550 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:17:00.092811 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:17:00.095501 [debug] [ThreadPool]: On list_warehousedb_public: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb_public"} */
+select
+      'warehousedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m12:17:00.105624 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m12:17:00.109218 [debug] [ThreadPool]: On list_warehousedb_public: ROLLBACK
+[0m12:17:00.111798 [debug] [ThreadPool]: On list_warehousedb_public: Close
+[0m12:17:00.119591 [debug] [MainThread]: Using postgres connection "master"
+[0m12:17:00.121671 [debug] [MainThread]: On master: BEGIN
+[0m12:17:00.123525 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:17:00.129491 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:17:00.131617 [debug] [MainThread]: Using postgres connection "master"
+[0m12:17:00.133559 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:17:00.143360 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m12:17:00.145956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '03e9c71a-d4bc-4e2c-af20-f6b2d55e2601', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4beaca60>]}
+[0m12:17:00.147529 [debug] [MainThread]: On master: ROLLBACK
+[0m12:17:00.149171 [debug] [MainThread]: On master: Close
+[0m12:17:00.150735 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:17:00.152219 [info ] [MainThread]: 
+[0m12:17:00.159949 [debug] [Thread-1  ]: Began running node model.data_platform.fact_daily_sales
+[0m12:17:00.161687 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehousedb_public, now model.data_platform.fact_daily_sales)
+[0m12:17:00.162982 [debug] [Thread-1  ]: Began compiling node model.data_platform.fact_daily_sales
+[0m12:17:00.171664 [debug] [Thread-1  ]: Writing injected SQL for node "model.data_platform.fact_daily_sales"
+[0m12:17:00.180878 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (compile): 12:17:00.164140 => 12:17:00.180422
+[0m12:17:00.182529 [debug] [Thread-1  ]: Began executing node model.data_platform.fact_daily_sales
+[0m12:17:00.183880 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (execute): 12:17:00.183533 => 12:17:00.183553
+[0m12:17:00.185649 [debug] [Thread-1  ]: Finished running node model.data_platform.fact_daily_sales
+[0m12:17:00.187539 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:17:00.190235 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.data_platform.fact_daily_sales, now test.data_platform.source_not_null_raw_products_product_id.b984a33cae)
+[0m12:17:00.191865 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:17:00.204488 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_products_product_id.b984a33cae"
+[0m12:17:00.240307 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_products_product_id.b984a33cae (compile): 12:17:00.192870 => 12:17:00.239945
+[0m12:17:00.242122 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:17:00.244228 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_products_product_id.b984a33cae (execute): 12:17:00.243993 => 12:17:00.244008
+[0m12:17:00.246525 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:17:00.248615 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:17:00.250516 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_products_product_id.b984a33cae, now test.data_platform.source_not_null_raw_reviews_review_id.665453b59e)
+[0m12:17:00.252219 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:17:00.257724 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_reviews_review_id.665453b59e"
+[0m12:17:00.292020 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_reviews_review_id.665453b59e (compile): 12:17:00.253811 => 12:17:00.291621
+[0m12:17:00.293930 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:17:00.298230 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_reviews_review_id.665453b59e (execute): 12:17:00.297736 => 12:17:00.297762
+[0m12:17:00.302711 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:17:00.306213 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:17:00.308167 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_reviews_review_id.665453b59e, now test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf)
+[0m12:17:00.309857 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:17:00.316512 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf"
+[0m12:17:00.342321 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf (compile): 12:17:00.311425 => 12:17:00.341900
+[0m12:17:00.346144 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:17:00.352675 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf (execute): 12:17:00.352100 => 12:17:00.352125
+[0m12:17:00.356882 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:17:00.360842 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:17:00.362907 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf, now test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193)
+[0m12:17:00.364492 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:17:00.369937 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193"
+[0m12:17:00.385360 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193 (compile): 12:17:00.365723 => 12:17:00.384950
+[0m12:17:00.386677 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:17:00.388042 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193 (execute): 12:17:00.387742 => 12:17:00.387756
+[0m12:17:00.389531 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:17:00.390605 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:17:00.391967 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193, now test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235)
+[0m12:17:00.393366 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:17:00.398328 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235"
+[0m12:17:00.421692 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235 (compile): 12:17:00.394296 => 12:17:00.421296
+[0m12:17:00.423217 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:17:00.424560 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235 (execute): 12:17:00.424274 => 12:17:00.424292
+[0m12:17:00.426181 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:17:00.428712 [debug] [Thread-1  ]: Began running node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:17:00.433551 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235, now test.data_platform.source_unique_raw_products_product_id.518dac90ba)
+[0m12:17:00.436855 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:17:00.445293 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_unique_raw_products_product_id.518dac90ba"
+[0m12:17:00.469224 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_products_product_id.518dac90ba (compile): 12:17:00.438555 => 12:17:00.468807
+[0m12:17:00.471018 [debug] [Thread-1  ]: Began executing node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:17:00.472891 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_products_product_id.518dac90ba (execute): 12:17:00.472594 => 12:17:00.472613
+[0m12:17:00.475301 [debug] [Thread-1  ]: Finished running node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:17:00.477156 [debug] [Thread-1  ]: Began running node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:17:00.479053 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_unique_raw_products_product_id.518dac90ba, now test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0)
+[0m12:17:00.480702 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:17:00.486648 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0"
+[0m12:17:00.514181 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0 (compile): 12:17:00.482120 => 12:17:00.513779
+[0m12:17:00.519047 [debug] [Thread-1  ]: Began executing node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:17:00.524038 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0 (execute): 12:17:00.523644 => 12:17:00.523665
+[0m12:17:00.526926 [debug] [Thread-1  ]: Finished running node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:17:00.530153 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:17:00.532048 [debug] [MainThread]: Connection 'test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0' was properly closed.
+[0m12:17:00.534404 [debug] [MainThread]: Command end result
+[0m12:17:00.612341 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m12:17:00.614446 [info ] [MainThread]: Building catalog
+[0m12:17:00.618302 [debug] [ThreadPool]: Acquiring new postgres connection 'warehousedb.information_schema'
+[0m12:17:00.629706 [debug] [ThreadPool]: Using postgres connection "warehousedb.information_schema"
+[0m12:17:00.635486 [debug] [ThreadPool]: On warehousedb.information_schema: BEGIN
+[0m12:17:00.639970 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:00.651192 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:17:00.654830 [debug] [ThreadPool]: Using postgres connection "warehousedb.information_schema"
+[0m12:17:00.657683 [debug] [ThreadPool]: On warehousedb.information_schema: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "warehousedb.information_schema"} */
+
+    
+    
+
+    select
+        'warehousedb' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('sales')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('fact_daily_sales')) or (upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('products')) or (upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('reviews')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m12:17:00.673812 [debug] [ThreadPool]: SQL status: SELECT 20 in 0.0 seconds
+[0m12:17:00.682234 [debug] [ThreadPool]: On warehousedb.information_schema: ROLLBACK
+[0m12:17:00.684894 [debug] [ThreadPool]: On warehousedb.information_schema: Close
+[0m12:17:00.728381 [info ] [MainThread]: Catalog written to /opt/airflow/dbt_project/target/catalog.json
+[0m12:17:00.731506 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 2.5266576, "process_user_time": 3.798643, "process_kernel_time": 0.321642, "process_mem_max_rss": "113740", "process_in_blocks": "31976", "process_out_blocks": "0"}
+[0m12:17:00.733403 [debug] [MainThread]: Command `dbt docs generate` succeeded at 12:17:00.733216 after 2.53 seconds
+[0m12:17:00.735218 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m12:17:00.737186 [debug] [MainThread]: Connection 'warehousedb.information_schema' was properly closed.
+[0m12:17:00.739051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4fbfa6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4bffd1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c4e4dfaf7f0>]}
+[0m12:17:00.740886 [debug] [MainThread]: Flushing usage events
+[0m12:20:54.126007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e52c6220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e57820d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e2facd00>]}
+
+
+============================== 12:20:54.136760 | 885bbb7b-cb23-4818-af09-3732b1b4d16f ==============================
+[0m12:20:54.136760 [info ] [MainThread]: Running with dbt=1.7.14
+[0m12:20:54.138893 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt deps', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:20:54.609923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '885bbb7b-cb23-4818-af09-3732b1b4d16f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e36f1a30>]}
+[0m12:20:55.550223 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-1_qfio77'
+[0m12:20:55.552530 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:20:55.861819 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:20:55.865176 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:20:56.229991 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:20:56.237298 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:21:03.064429 [info ] [MainThread]: Installed from version 1.1.1
+[0m12:21:03.067285 [info ] [MainThread]: Updated version available: 1.3.3
+[0m12:21:03.068834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '885bbb7b-cb23-4818-af09-3732b1b4d16f', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e2fb3070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e2ee6790>]}
+[0m12:21:03.070174 [info ] [MainThread]: 
+[0m12:21:03.071345 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:21:03.074354 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 9.073065, "process_user_time": 3.448474, "process_kernel_time": 0.723001, "process_mem_max_rss": "99296", "process_in_blocks": "93680", "process_out_blocks": "200"}
+[0m12:21:03.076369 [debug] [MainThread]: Command `dbt deps` succeeded at 12:21:03.076072 after 9.08 seconds
+[0m12:21:03.078585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e52c6220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e2f746d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c66e2ee6790>]}
+[0m12:21:03.081893 [debug] [MainThread]: Flushing usage events
+[0m12:21:10.810419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274d2f746d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274d0ca1220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274d0ca13d0>]}
+
+
+============================== 12:21:10.820267 | fe27d065-aad7-42cc-8df9-779fe955e8c2 ==============================
+[0m12:21:10.820267 [info ] [MainThread]: Running with dbt=1.7.14
+[0m12:21:10.822864 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m12:21:11.454014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf497940>]}
+[0m12:21:11.528959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf3aacd0>]}
+[0m12:21:11.532611 [info ] [MainThread]: Registered adapter: postgres=1.7.14
+[0m12:21:11.597735 [debug] [MainThread]: checksum: ccbe0bccecb23e0b0bcca76d525b7d642e28acd474046360f7f33e61c6a2b781, vars: {}, profile: , target: , version: 1.7.14
+[0m12:21:13.719375 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:21:13.721325 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:21:13.731825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf0b10d0>]}
+[0m12:21:13.796364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf218550>]}
+[0m12:21:13.798620 [info ] [MainThread]: Found 1 model, 7 tests, 3 sources, 0 exposures, 0 metrics, 515 macros, 0 groups, 0 semantic models
+[0m12:21:13.801081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf218490>]}
+[0m12:21:13.804515 [info ] [MainThread]: 
+[0m12:21:13.809626 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:21:13.813866 [debug] [ThreadPool]: Acquiring new postgres connection 'list_warehousedb'
+[0m12:21:13.831916 [debug] [ThreadPool]: Using postgres connection "list_warehousedb"
+[0m12:21:13.834395 [debug] [ThreadPool]: On list_warehousedb: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m12:21:13.836248 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:21:13.857233 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m12:21:13.860226 [debug] [ThreadPool]: On list_warehousedb: Close
+[0m12:21:13.863620 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehousedb, now list_warehousedb_public)
+[0m12:21:13.871412 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:21:13.873390 [debug] [ThreadPool]: On list_warehousedb_public: BEGIN
+[0m12:21:13.875452 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:21:13.885553 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:13.888409 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:21:13.893195 [debug] [ThreadPool]: On list_warehousedb_public: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb_public"} */
+select
+      'warehousedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m12:21:13.911674 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m12:21:13.916896 [debug] [ThreadPool]: On list_warehousedb_public: ROLLBACK
+[0m12:21:13.919998 [debug] [ThreadPool]: On list_warehousedb_public: Close
+[0m12:21:13.933495 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:13.936401 [debug] [MainThread]: On master: BEGIN
+[0m12:21:13.939383 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:21:13.950275 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:13.952989 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:13.958186 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:21:13.973765 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m12:21:13.976987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cefca820>]}
+[0m12:21:13.979737 [debug] [MainThread]: On master: ROLLBACK
+[0m12:21:13.982832 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:13.985793 [debug] [MainThread]: On master: BEGIN
+[0m12:21:13.988649 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:13.990834 [debug] [MainThread]: On master: COMMIT
+[0m12:21:13.992839 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:13.995339 [debug] [MainThread]: On master: COMMIT
+[0m12:21:13.997940 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:21:14.000208 [debug] [MainThread]: On master: Close
+[0m12:21:14.003237 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:21:14.006146 [info ] [MainThread]: 
+[0m12:21:14.016608 [debug] [Thread-1  ]: Began running node model.data_platform.fact_daily_sales
+[0m12:21:14.019545 [info ] [Thread-1  ]: 1 of 1 START sql table model public.fact_daily_sales ........................... [RUN]
+[0m12:21:14.023367 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehousedb_public, now model.data_platform.fact_daily_sales)
+[0m12:21:14.025871 [debug] [Thread-1  ]: Began compiling node model.data_platform.fact_daily_sales
+[0m12:21:14.035094 [debug] [Thread-1  ]: Writing injected SQL for node "model.data_platform.fact_daily_sales"
+[0m12:21:14.055714 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (compile): 12:21:14.027864 => 12:21:14.055176
+[0m12:21:14.058487 [debug] [Thread-1  ]: Began executing node model.data_platform.fact_daily_sales
+[0m12:21:14.119204 [debug] [Thread-1  ]: Writing runtime sql for node "model.data_platform.fact_daily_sales"
+[0m12:21:14.139319 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.141704 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: BEGIN
+[0m12:21:14.143848 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:21:14.150512 [debug] [Thread-1  ]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:14.153296 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.156020 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+
+  
+    
+
+  create  table "warehousedb"."public"."fact_daily_sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- dbt_project/models/fact_daily_sales.sql
+-- Aggregated daily sales fact table joining sales, products, and reviews
+
+
+
+SELECT
+    s.sale_date::DATE                       AS date,
+    s.product_id,
+    p.name                                  AS product_name,
+    p.category                              AS product_category,
+    SUM(s.quantity)                         AS total_quantity_sold,
+    SUM(s.total_amount)                     AS total_revenue,
+    AVG(r.rating)                           AS avg_review_rating
+FROM
+    raw.sales s
+    JOIN raw.products p
+        ON s.product_id = p.product_id
+    LEFT JOIN raw.reviews r
+        ON s.product_id = r.product_id
+GROUP BY
+    s.sale_date::DATE,
+    s.product_id,
+    p.name,
+    p.category
+ORDER BY
+    date DESC,
+    product_id
+  );
+  
+[0m12:21:14.176616 [debug] [Thread-1  ]: SQL status: SELECT 5 in 0.0 seconds
+[0m12:21:14.184651 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.186913 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+alter table "warehousedb"."public"."fact_daily_sales" rename to "fact_daily_sales__dbt_backup"
+[0m12:21:14.189850 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:21:14.194641 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.196560 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+alter table "warehousedb"."public"."fact_daily_sales__dbt_tmp" rename to "fact_daily_sales"
+[0m12:21:14.199387 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m12:21:14.223591 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: COMMIT
+[0m12:21:14.226663 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.229137 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: COMMIT
+[0m12:21:14.233293 [debug] [Thread-1  ]: SQL status: COMMIT in 0.0 seconds
+[0m12:21:14.243901 [debug] [Thread-1  ]: Applying DROP to: "warehousedb"."public"."fact_daily_sales__dbt_backup"
+[0m12:21:14.253356 [debug] [Thread-1  ]: Using postgres connection "model.data_platform.fact_daily_sales"
+[0m12:21:14.256458 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "node_id": "model.data_platform.fact_daily_sales"} */
+drop table if exists "warehousedb"."public"."fact_daily_sales__dbt_backup" cascade
+[0m12:21:14.264301 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.0 seconds
+[0m12:21:14.268188 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (execute): 12:21:14.060683 => 12:21:14.267963
+[0m12:21:14.270440 [debug] [Thread-1  ]: On model.data_platform.fact_daily_sales: Close
+[0m12:21:14.273075 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fe27d065-aad7-42cc-8df9-779fe955e8c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf043820>]}
+[0m12:21:14.276042 [info ] [Thread-1  ]: 1 of 1 OK created sql table model public.fact_daily_sales ...................... [[32mSELECT 5[0m in 0.25s]
+[0m12:21:14.282134 [debug] [Thread-1  ]: Finished running node model.data_platform.fact_daily_sales
+[0m12:21:14.285834 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:14.288240 [debug] [MainThread]: On master: BEGIN
+[0m12:21:14.290101 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:21:14.295819 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:14.298124 [debug] [MainThread]: On master: COMMIT
+[0m12:21:14.300910 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:14.303200 [debug] [MainThread]: On master: COMMIT
+[0m12:21:14.308009 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m12:21:14.311185 [debug] [MainThread]: On master: Close
+[0m12:21:14.316799 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:21:14.319402 [debug] [MainThread]: Connection 'model.data_platform.fact_daily_sales' was properly closed.
+[0m12:21:14.322646 [info ] [MainThread]: 
+[0m12:21:14.325425 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.51 seconds (0.51s).
+[0m12:21:14.327776 [debug] [MainThread]: Command end result
+[0m12:21:14.367698 [info ] [MainThread]: 
+[0m12:21:14.371140 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:21:14.374226 [info ] [MainThread]: 
+[0m12:21:14.376547 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m12:21:14.381762 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.710538, "process_user_time": 3.79031, "process_kernel_time": 0.481685, "process_mem_max_rss": "110592", "process_in_blocks": "80592", "process_out_blocks": "0"}
+[0m12:21:14.385953 [debug] [MainThread]: Command `dbt run` succeeded at 12:21:14.385158 after 3.71 seconds
+[0m12:21:14.390207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274d2f746d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf05bf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7274cf2187c0>]}
+[0m12:21:14.393312 [debug] [MainThread]: Flushing usage events
+[0m12:21:23.221395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913ae4ff400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913ac230940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913ac230af0>]}
+
+
+============================== 12:21:23.231608 | a153902b-abe9-4527-8438-b2ba3061d81c ==============================
+[0m12:21:23.231608 [info ] [MainThread]: Running with dbt=1.7.14
+[0m12:21:23.233555 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:21:23.749887 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa9ca760>]}
+[0m12:21:23.829463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa9895e0>]}
+[0m12:21:23.831902 [info ] [MainThread]: Registered adapter: postgres=1.7.14
+[0m12:21:23.888815 [debug] [MainThread]: checksum: ccbe0bccecb23e0b0bcca76d525b7d642e28acd474046360f7f33e61c6a2b781, vars: {}, profile: , target: , version: 1.7.14
+[0m12:21:25.756987 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:21:25.759275 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:21:25.769601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa63c970>]}
+[0m12:21:25.788328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa74f670>]}
+[0m12:21:25.791008 [info ] [MainThread]: Found 1 model, 7 tests, 3 sources, 0 exposures, 0 metrics, 515 macros, 0 groups, 0 semantic models
+[0m12:21:25.793116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa74f760>]}
+[0m12:21:25.796886 [info ] [MainThread]: 
+[0m12:21:25.799691 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:21:25.803747 [debug] [ThreadPool]: Acquiring new postgres connection 'list_warehousedb_public'
+[0m12:21:25.817286 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:21:25.819635 [debug] [ThreadPool]: On list_warehousedb_public: BEGIN
+[0m12:21:25.821620 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:21:25.837068 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:25.840576 [debug] [ThreadPool]: Using postgres connection "list_warehousedb_public"
+[0m12:21:25.842610 [debug] [ThreadPool]: On list_warehousedb_public: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "list_warehousedb_public"} */
+select
+      'warehousedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'warehousedb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m12:21:25.852085 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m12:21:25.854984 [debug] [ThreadPool]: On list_warehousedb_public: ROLLBACK
+[0m12:21:25.857620 [debug] [ThreadPool]: On list_warehousedb_public: Close
+[0m12:21:25.864246 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:25.866083 [debug] [MainThread]: On master: BEGIN
+[0m12:21:25.867721 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:21:25.873216 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:25.875200 [debug] [MainThread]: Using postgres connection "master"
+[0m12:21:25.877049 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:21:25.889877 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m12:21:25.893022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a153902b-abe9-4527-8438-b2ba3061d81c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa7589d0>]}
+[0m12:21:25.895262 [debug] [MainThread]: On master: ROLLBACK
+[0m12:21:25.897452 [debug] [MainThread]: On master: Close
+[0m12:21:25.899767 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:21:25.901282 [info ] [MainThread]: 
+[0m12:21:25.911098 [debug] [Thread-1  ]: Began running node model.data_platform.fact_daily_sales
+[0m12:21:25.913341 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehousedb_public, now model.data_platform.fact_daily_sales)
+[0m12:21:25.914811 [debug] [Thread-1  ]: Began compiling node model.data_platform.fact_daily_sales
+[0m12:21:25.925415 [debug] [Thread-1  ]: Writing injected SQL for node "model.data_platform.fact_daily_sales"
+[0m12:21:25.941397 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (compile): 12:21:25.916662 => 12:21:25.940697
+[0m12:21:25.943489 [debug] [Thread-1  ]: Began executing node model.data_platform.fact_daily_sales
+[0m12:21:25.945313 [debug] [Thread-1  ]: Timing info for model.data_platform.fact_daily_sales (execute): 12:21:25.945047 => 12:21:25.945068
+[0m12:21:25.947563 [debug] [Thread-1  ]: Finished running node model.data_platform.fact_daily_sales
+[0m12:21:25.949592 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:21:25.951631 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.data_platform.fact_daily_sales, now test.data_platform.source_not_null_raw_products_product_id.b984a33cae)
+[0m12:21:25.953874 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:21:25.978083 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_products_product_id.b984a33cae"
+[0m12:21:26.002561 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_products_product_id.b984a33cae (compile): 12:21:25.955307 => 12:21:26.002000
+[0m12:21:26.005448 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:21:26.008155 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_products_product_id.b984a33cae (execute): 12:21:26.007624 => 12:21:26.007652
+[0m12:21:26.010968 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_products_product_id.b984a33cae
+[0m12:21:26.013298 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:21:26.015735 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_products_product_id.b984a33cae, now test.data_platform.source_not_null_raw_reviews_review_id.665453b59e)
+[0m12:21:26.017647 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:21:26.025096 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_reviews_review_id.665453b59e"
+[0m12:21:26.048049 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_reviews_review_id.665453b59e (compile): 12:21:26.019329 => 12:21:26.047645
+[0m12:21:26.049974 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:21:26.051976 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_reviews_review_id.665453b59e (execute): 12:21:26.051675 => 12:21:26.051694
+[0m12:21:26.055618 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_reviews_review_id.665453b59e
+[0m12:21:26.058307 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:21:26.060710 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_reviews_review_id.665453b59e, now test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf)
+[0m12:21:26.062662 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:21:26.068360 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf"
+[0m12:21:26.089078 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf (compile): 12:21:26.064280 => 12:21:26.088586
+[0m12:21:26.092795 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:21:26.095448 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf (execute): 12:21:26.095099 => 12:21:26.095118
+[0m12:21:26.097884 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf
+[0m12:21:26.099834 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:21:26.101998 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_product_id.2df6f2e7bf, now test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193)
+[0m12:21:26.103559 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:21:26.109397 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193"
+[0m12:21:26.126728 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193 (compile): 12:21:26.105069 => 12:21:26.126362
+[0m12:21:26.128722 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:21:26.130689 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193 (execute): 12:21:26.130428 => 12:21:26.130443
+[0m12:21:26.132740 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193
+[0m12:21:26.134667 [debug] [Thread-1  ]: Began running node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:21:26.136687 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_sale_date.cf603a7193, now test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235)
+[0m12:21:26.138369 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:21:26.143756 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235"
+[0m12:21:26.156942 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235 (compile): 12:21:26.139860 => 12:21:26.156578
+[0m12:21:26.158644 [debug] [Thread-1  ]: Began executing node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:21:26.160511 [debug] [Thread-1  ]: Timing info for test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235 (execute): 12:21:26.160222 => 12:21:26.160239
+[0m12:21:26.162900 [debug] [Thread-1  ]: Finished running node test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235
+[0m12:21:26.164532 [debug] [Thread-1  ]: Began running node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:21:26.166558 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_not_null_raw_sales_sale_id.b4afb6c235, now test.data_platform.source_unique_raw_products_product_id.518dac90ba)
+[0m12:21:26.168096 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:21:26.176549 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_unique_raw_products_product_id.518dac90ba"
+[0m12:21:26.191258 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_products_product_id.518dac90ba (compile): 12:21:26.169745 => 12:21:26.190847
+[0m12:21:26.192589 [debug] [Thread-1  ]: Began executing node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:21:26.193820 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_products_product_id.518dac90ba (execute): 12:21:26.193580 => 12:21:26.193595
+[0m12:21:26.195681 [debug] [Thread-1  ]: Finished running node test.data_platform.source_unique_raw_products_product_id.518dac90ba
+[0m12:21:26.196901 [debug] [Thread-1  ]: Began running node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:21:26.198270 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.data_platform.source_unique_raw_products_product_id.518dac90ba, now test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0)
+[0m12:21:26.199336 [debug] [Thread-1  ]: Began compiling node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:21:26.204257 [debug] [Thread-1  ]: Writing injected SQL for node "test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0"
+[0m12:21:26.212459 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0 (compile): 12:21:26.200223 => 12:21:26.212142
+[0m12:21:26.213614 [debug] [Thread-1  ]: Began executing node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:21:26.214905 [debug] [Thread-1  ]: Timing info for test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0 (execute): 12:21:26.214652 => 12:21:26.214667
+[0m12:21:26.216483 [debug] [Thread-1  ]: Finished running node test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0
+[0m12:21:26.218291 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:21:26.220717 [debug] [MainThread]: Connection 'test.data_platform.source_unique_raw_sales_sale_id.c50ca078c0' was properly closed.
+[0m12:21:26.222525 [debug] [MainThread]: Command end result
+[0m12:21:26.283513 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m12:21:26.284885 [info ] [MainThread]: Building catalog
+[0m12:21:26.289188 [debug] [ThreadPool]: Acquiring new postgres connection 'warehousedb.information_schema'
+[0m12:21:26.301155 [debug] [ThreadPool]: Using postgres connection "warehousedb.information_schema"
+[0m12:21:26.303064 [debug] [ThreadPool]: On warehousedb.information_schema: BEGIN
+[0m12:21:26.305775 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:21:26.317062 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m12:21:26.319238 [debug] [ThreadPool]: Using postgres connection "warehousedb.information_schema"
+[0m12:21:26.325977 [debug] [ThreadPool]: On warehousedb.information_schema: /* {"app": "dbt", "dbt_version": "1.7.14", "profile_name": "data_platform", "target_name": "dev", "connection_name": "warehousedb.information_schema"} */
+
+    
+    
+
+    select
+        'warehousedb' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('products')) or (upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('reviews')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('fact_daily_sales')) or (upper(sch.nspname) = upper('raw') and
+           upper(tbl.relname) = upper('sales')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m12:21:26.341346 [debug] [ThreadPool]: SQL status: SELECT 20 in 0.0 seconds
+[0m12:21:26.349449 [debug] [ThreadPool]: On warehousedb.information_schema: ROLLBACK
+[0m12:21:26.357349 [debug] [ThreadPool]: On warehousedb.information_schema: Close
+[0m12:21:26.415722 [info ] [MainThread]: Catalog written to /opt/airflow/dbt_project/target/catalog.json
+[0m12:21:26.421104 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 3.3608186, "process_user_time": 3.664168, "process_kernel_time": 0.412018, "process_mem_max_rss": "110156", "process_in_blocks": "78864", "process_out_blocks": "0"}
+[0m12:21:26.424467 [debug] [MainThread]: Command `dbt docs generate` succeeded at 12:21:26.424154 after 3.37 seconds
+[0m12:21:26.427194 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m12:21:26.433897 [debug] [MainThread]: Connection 'warehousedb.information_schema' was properly closed.
+[0m12:21:26.439467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913ae4ff400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa8ff790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7913aa9adf10>]}
+[0m12:21:26.442538 [debug] [MainThread]: Flushing usage events

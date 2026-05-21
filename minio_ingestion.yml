@@ -1,0 +1,27 @@
+source:
+  type: s3
+  config:
+    path_specs:
+      - include: "s3://raw-zone/{table}/*.parquet"
+        file_types:
+          - parquet
+      - include: "s3://raw-zone/{table}/*.csv"
+        file_types:
+          - csv
+      - include: "s3://processed-zone/{table}/*.parquet"
+        file_types:
+          - parquet
+      - include: "s3://curated-zone/{table}/*.parquet"
+        file_types:
+          - parquet
+
+    aws_config:
+      aws_access_key_id: minioadmin
+      aws_secret_access_key: minioadmin
+      aws_endpoint_url: http://localhost:9000
+      aws_region: us-east-1
+
+sink:
+  type: datahub-rest
+  config:
+    server: http://localhost:8080

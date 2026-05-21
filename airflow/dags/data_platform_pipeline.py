@@ -220,7 +220,7 @@ def update_data_catalog(**context):
         import requests
         datahub_url = Variable.get(
             "DATAHUB_GMS_URL",
-            default_var="http://datahub-gms:8080",
+            default_var="http://datahub-datahub-gms-quickstart-1:8080",
         )
         datasets = [
             {"platform": "s3",       "name": "raw-zone.sales",                          "env": "PROD"},

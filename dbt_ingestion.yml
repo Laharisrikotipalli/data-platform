@@ -1,0 +1,15 @@
+source:
+  type: dbt
+  config:
+    manifest_path: ./dbt_project/target/manifest.json
+    catalog_path: ./dbt_project/target/catalog.json
+    run_results_paths:
+      - ./dbt_project/target/run_results.json
+    target_platform: postgres
+    stateful_ingestion:
+      enabled: false
+
+sink:
+  type: datahub-rest
+  config:
+    server: http://localhost:8080

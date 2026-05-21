@@ -1,64 +1,72 @@
 # Data Platform Pipeline
 
-Cloud-native end-to-end data engineering platform using Apache Airflow, MinIO, PostgreSQL, dbt, Great Expectations, and FastAPI for automated ingestion, transformation, validation, storage, and analytics serving.
+Cloud-native end-to-end enterprise data engineering platform using Apache Airflow, MinIO, PostgreSQL, dbt, Great Expectations, DataHub, Kafka, OpenSearch, and FastAPI for automated ingestion, validation, transformation, lineage tracking, metadata governance, analytics serving, and secure API access.
 
 ---
 
 # Architecture
 
 ```text
-                        ┌────────────────────┐
-                        │   FMP Stock API    │
-                        └─────────┬──────────┘
-                                  │
+                                ┌────────────────────┐
+                                │   FMP Stock API    │
+                                └─────────┬──────────┘
+                                          │
 
-┌────────────────────┐            │
-│ PostgreSQL Source  │            │
-│  - products        │            │
-│  - sales           │            │
-│  - reviews         │            │
-└─────────┬──────────┘            │
-          │                       │
-          ▼                       ▼
+┌────────────────────┐                    │
+│ PostgreSQL Source  │                    │
+│  - products        │                    │
+│  - sales           │                    │
+│  - reviews         │                    │
+└─────────┬──────────┘                    │
+          │                               │
+          ▼                               ▼
 
-                ┌────────────────────────┐
-                │     Apache Airflow     │
-                │   ETL Orchestration    │
-                └──────────┬─────────────┘
-                           │
+                    ┌───────────────────────────┐
+                    │      Apache Airflow       │
+                    │     ETL Orchestration     │
+                    └────────────┬──────────────┘
+                                 │
 
-        ┌──────────────────┼──────────────────┐
-        ▼                  ▼                  ▼
+        ┌────────────────────────┼────────────────────────┐
+        ▼                        ▼                        ▼
 
-┌───────────────┐  ┌───────────────┐  ┌────────────────┐
-│ MinIO Landing │  │ MinIO Raw     │  │ Great          │
-│ Zone          │  │ Zone          │  │ Expectations   │
-│ CSV ingestion │  │ Delta/Parquet │  │ Data Validation│
-└──────┬────────┘  └──────┬────────┘  └────────┬───────┘
-       │                  │                    │
-       └──────────────────┴────────────────────┘
-                           │
-                           ▼
+┌────────────────┐   ┌────────────────────┐   ┌────────────────────┐
+│ MinIO Landing  │   │ MinIO Raw Zone     │   │ Great Expectations │
+│ Zone           │   │ Delta Lake Format  │   │ Data Validation    │
+└──────┬─────────┘   └─────────┬──────────┘   └──────────┬─────────┘
+       │                       │                         │
+       └───────────────────────┴─────────────────────────┘
+                                 │
+                                 ▼
 
-                ┌────────────────────────┐
-                │          dbt           │
-                │ Data Transformations   │
-                │ fact_daily_sales       │
-                └──────────┬─────────────┘
-                           │
-                           ▼
+                    ┌───────────────────────────┐
+                    │            dbt            │
+                    │   Data Transformations    │
+                    │    fact_daily_sales       │
+                    └────────────┬──────────────┘
+                                 │
+                                 ▼
 
-                ┌────────────────────────┐
-                │ PostgreSQL Warehouse   │
-                │ Analytics Data Store   │
-                └──────────┬─────────────┘
-                           │
-                           ▼
+                    ┌───────────────────────────┐
+                    │ PostgreSQL Warehouse      │
+                    │ Analytics Data Warehouse  │
+                    └────────────┬──────────────┘
+                                 │
+               ┌─────────────────┼──────────────────┐
+               ▼                 ▼                  ▼
 
-                ┌────────────────────────┐
-                │       FastAPI          │
-                │ JWT + RBAC APIs        │
-                └────────────────────────┘
+     ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
+     │    FastAPI     │ │    DataHub     │ │ Kafka + Schema │
+     │ JWT + RBAC API │ │ Metadata Layer │ │ Registry       │
+     └────────────────┘ └──────┬─────────┘ └────────────────┘
+                                │
+                                ▼
+
+                      ┌────────────────────┐
+                      │     OpenSearch     │
+                      │ Metadata Search    │
+                      │ Lineage Indexing   │
+                      └────────────────────┘
 ```
 
 ---
@@ -73,6 +81,11 @@ Cloud-native end-to-end data engineering platform using Apache Airflow, MinIO, P
 - FastAPI
 - Docker & Docker Compose
 - JWT Authentication
+- RBAC Authorization
+- Kafka
+- Schema Registry
+- OpenSearch
+- DataHub
 - Pytest
 - Python
 
@@ -80,16 +93,19 @@ Cloud-native end-to-end data engineering platform using Apache Airflow, MinIO, P
 
 # Features
 
-- Automated ETL pipelines
-- Object storage data lake
-- Analytics warehouse
+- Automated ETL orchestration
+- Delta Lake raw data storage
+- Metadata governance & lineage
 - Data quality validation
+- Analytics warehouse
 - dbt transformations
-- JWT-secured REST APIs
-- RBAC authorization
+- JWT-secured APIs
+- Role-based access control
+- Automated backups
+- Data catalog integration
+- Column-level lineage
+- Dockerized infrastructure
 - Automated testing
-- Timestamped backups
-- Dockerized deployment
 
 ---
 
@@ -97,13 +113,51 @@ Cloud-native end-to-end data engineering platform using Apache Airflow, MinIO, P
 
 | Service | Port | Purpose |
 |---|---|---|
-| postgres-source | 5432 | Transactional source database |
+| postgres-source | 5432 | Source transactional database |
 | postgres-warehouse | 5433 | Analytics warehouse |
 | postgres-airflow | Internal | Airflow metadata database |
 | minio | 9000 / 9001 | Object storage data lake |
-| airflow-webserver | 8080 | Workflow orchestration UI |
+| airflow-webserver | 8083 | Airflow UI |
 | airflow-scheduler | Internal | DAG scheduler |
+| kafka | 9093 | Event streaming |
+| schema-registry | 8081 | Schema management |
+| opensearch | 9201 | Metadata indexing |
 | data-api | 8000 | Secure analytics APIs |
+| datahub | 9002 | Metadata catalog & lineage |
+
+---
+
+# Project Structure
+
+```text
+data-platform/
+│
+├── airflow/
+│   └── dags/
+│       └── data_platform_pipeline.py
+│
+├── backups/
+│
+├── data_api/
+│
+├── dbt_project/
+│
+├── great_expectations/
+│
+├── seeds/
+│   ├── source_db/
+│   │   └── 01_init.sql
+│   └── minio_files/
+│       └── customer_reviews.csv
+│
+├── tests/
+│
+├── docker-compose.yml
+├── Dockerfile.airflow
+├── requirements.txt
+├── .env.example
+└── README.md
+```
 
 ---
 
@@ -112,7 +166,7 @@ Cloud-native end-to-end data engineering platform using Apache Airflow, MinIO, P
 ## 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Laharisrikotipalli/data-platform.git
 cd data-platform
 ```
 
@@ -134,7 +188,15 @@ docker volume prune -f
 docker compose up -d --build
 ```
 
-Wait approximately 2–3 minutes for all services to initialize.
+Wait approximately 3–5 minutes for all services to initialize.
+
+---
+
+## 4. Start DataHub
+
+```bash
+datahub docker quickstart
+```
 
 ---
 
@@ -142,10 +204,8 @@ Wait approximately 2–3 minutes for all services to initialize.
 
 ## Airflow UI
 
-URL:
-
 ```text
-http://localhost:8080
+http://localhost:8083
 ```
 
 Credentials:
@@ -155,17 +215,9 @@ Username: admin
 Password: admin
 ```
 
-Trigger DAG:
-
-```text
-data_platform_pipeline
-```
-
 ---
 
 ## MinIO Console
-
-URL:
 
 ```text
 http://localhost:9001
@@ -180,12 +232,18 @@ Password: minioadmin
 
 ---
 
-## FastAPI Swagger Documentation
-
-URL:
+## FastAPI Swagger Docs
 
 ```text
 http://localhost:8000/docs
+```
+
+---
+
+## DataHub UI
+
+```text
+http://localhost:9002
 ```
 
 ---
@@ -200,13 +258,13 @@ docker exec -it postgres-source psql -U sourceuser -d sourcedb
 
 ---
 
-## Check Source Tables
+## Verify Tables
 
 ```sql
 \dt
 ```
 
-Expected Output:
+Expected:
 
 ```text
 products
@@ -219,58 +277,19 @@ reviews
 ## Verify Sample Data
 
 ```sql
-SELECT * FROM products LIMIT 5;
-SELECT * FROM sales LIMIT 5;
-SELECT * FROM reviews LIMIT 5;
+SELECT COUNT(*) FROM products;
+SELECT COUNT(*) FROM sales;
+SELECT COUNT(*) FROM reviews;
 ```
+
+Expected:
+- 10+ products
+- 10+ sales
+- 10+ reviews
 
 ---
 
-# Airflow DAG Pipeline
-
-## DAG Name
-
-```text
-data_platform_pipeline
-```
-
----
-
-## DAG Workflow
-
-```text
-start
-   │
-   ├── ingest_postgres
-   │      ├─ products
-   │      ├─ sales
-   │      └─ reviews
-   │
-   ├── ingest_api
-   │      └─ stock market data
-   │
-   ├── ingest_files
-   │      └─ customer_reviews.csv
-   │
-   ▼
-validate_data_quality
-   │
-   ▼
-transform_data_dbt
-   │
-   ▼
-load_to_warehouse
-   │
-   ▼
-update_data_catalog
-   │
-   ▼
-end
-```
-
----
-
-# MinIO Data Lake Verification
+# MinIO Data Lake
 
 ## Landing Zone
 
@@ -293,45 +312,91 @@ raw-zone/
 
 ---
 
-## Verify Buckets
-
-Open MinIO Console and verify:
+## Processed Zone
 
 ```text
-landing-zone
-raw-zone
+processed-zone/
+```
+
+---
+
+## Curated Zone
+
+```text
+curated-zone/
+```
+
+---
+
+# Airflow DAG Pipeline
+
+## DAG ID
+
+```text
+data_platform_pipeline
+```
+
+---
+
+# DAG Workflow
+
+```text
+start
+   │
+   ├── ingest_postgres
+   │      ├─ products
+   │      ├─ sales
+   │      └─ reviews
+   │
+   ├── ingest_api
+   │      └─ AAPL stock data
+   │
+   ├── ingest_files
+   │      └─ customer_reviews.csv
+   │
+   ▼
+validate_data_quality
+   │
+   ▼
+transform_data_dbt
+   │
+   ▼
+load_to_warehouse
+   │
+   ▼
+update_data_catalog
+   │
+   ▼
+end
 ```
 
 ---
 
 # Great Expectations Validation
 
-## Validation Task
-
-```text
-validate_data_quality
-```
-
----
-
 ## Validation Rules
 
-- Null checks
-- Quantity > 0 checks
 - Required column validation
+- Null checks
+- Quantity > 0 validation
 - Schema validation
 
 ---
 
-## Validation Success Logs
+## Failure Testing
 
-Example:
+Insert bad data:
 
-```text
-7 expectation(s) included in expectation_suite
-Great Expectations passed
-validation complete
+```sql
+INSERT INTO sales
+VALUES (999, NULL, NOW(), 1, 100);
 ```
+
+Re-run DAG.
+
+Expected:
+- validate_data_quality task fails
+- pipeline stops
 
 ---
 
@@ -349,22 +414,11 @@ docker exec -it airflow-webserver bash
 
 ```bash
 cd /opt/airflow/dbt_project
+
 dbt deps
 dbt run
-```
-
----
-
-## Run dbt Tests
-
-```bash
 dbt test
-```
-
-Expected Output:
-
-```text
-PASS
+dbt docs generate
 ```
 
 ---
@@ -379,7 +433,7 @@ docker exec -it postgres-warehouse psql -U warehouseuser -d warehousedb
 
 ---
 
-## Check Warehouse Tables
+## Verify Warehouse Tables
 
 ```sql
 \dt public.*
@@ -393,11 +447,75 @@ fact_daily_sales
 
 ---
 
-## Query Analytics Data
+## Query Analytics Table
 
 ```sql
-SELECT * FROM public.fact_daily_sales LIMIT 10;
+SELECT * FROM fact_daily_sales LIMIT 10;
 ```
+
+---
+
+# DataHub Metadata Ingestion
+
+## Install Connectors
+
+```bash
+pip install "acryl-datahub[postgres,s3,dbt]"
+```
+
+---
+
+## Warehouse Metadata Ingestion
+
+```bash
+datahub ingest -c warehouse_ingestion.yml
+```
+
+---
+
+## MinIO Metadata Ingestion
+
+```bash
+datahub ingest -c minio_ingestion.yml
+```
+
+---
+
+## dbt Lineage Ingestion
+
+```bash
+datahub ingest -c dbt_ingestion.yml
+```
+
+---
+
+# DataHub Verification
+
+Search inside DataHub UI:
+
+```text
+fact_daily_sales
+sales
+products
+reviews
+stocks
+```
+
+---
+
+# Lineage Verification
+
+Open:
+
+```text
+fact_daily_sales
+→ Lineage
+```
+
+Expected:
+- upstream raw datasets
+- dbt transformation lineage
+- column-level lineage
 
 ---
 
@@ -409,19 +527,9 @@ SELECT * FROM public.fact_daily_sales LIMIT 10;
 GET /health
 ```
 
-Example:
-
-```json
-{
-  "status": "healthy"
-}
-```
-
 ---
 
 ## POST `/login`
-
-Returns JWT access token.
 
 ### Analyst Login
 
@@ -431,6 +539,8 @@ Returns JWT access token.
   "password": "analyst123"
 }
 ```
+
+---
 
 ### Admin Login
 
@@ -443,10 +553,9 @@ Returns JWT access token.
 
 ---
 
-## GET `/api/v1/sales/daily`
+# GET `/api/v1/sales/daily`
 
 Accessible By:
-
 - analyst
 - admin
 
@@ -458,7 +567,7 @@ Example:
 {
   "data": [
     {
-      "date": "2026-04-20",
+      "date": "2026-05-20",
       "product_name": "Laptop Pro 15",
       "total_revenue": 1299.99
     }
@@ -469,13 +578,12 @@ Example:
 
 ---
 
-## GET `/api/v1/reviews/raw`
+# GET `/api/v1/reviews/raw`
 
 Accessible By:
-
 - admin only
 
-Returns raw review records.
+Returns raw customer review text.
 
 ---
 
@@ -499,7 +607,7 @@ pytest tests -v
 
 ---
 
-## Final Test Result
+## Expected Result
 
 ```text
 53 passed
@@ -511,13 +619,16 @@ pytest tests -v
 
 # Backup Strategy
 
-## Create Database Backups
+## Create Warehouse Backup
 
 ```bash
-bash backup.sh
+docker compose exec postgres-warehouse \
+bash /backups/backup.sh
 ```
 
-Creates timestamped PostgreSQL backups inside:
+---
+
+## Backup Output
 
 ```text
 ./backups/
@@ -531,75 +642,53 @@ warehouse_backup_2026_05_20_14_30_01.sql
 
 ---
 
-## Restore Source Database
+## Restore Warehouse
 
 ```bash
-docker exec -i postgres-source psql -U sourceuser -d sourcedb < backups/source_backup.sql
+docker exec -i postgres-warehouse \
+psql -U warehouseuser -d warehousedb < backups/warehouse_backup.sql
 ```
 
 ---
 
-## Restore Warehouse Database
+# Security
 
-```bash
-docker exec -i postgres-warehouse psql -U warehouseuser -d warehousedb < backups/warehouse_backup.sql
-```
-
----
-
-# Data Catalog
-
-The Airflow task:
-
-```text
-update_data_catalog
-```
-
-logs metadata, lineage, and warehouse dataset information.
-
-DataHub integration was removed from the default stack to reduce resource usage and improve local stability.
-
----
-
-# Environment Variables
-
-See:
-
-```text
-.env.example
-```
-
-for required configuration values.
+- JWT token validation
+- JWT expiration checks
+- RBAC authorization
+- Environment-based secrets
+- `.env` excluded from Git
+- Secure API access
 
 ---
 
 # Challenges Faced
 
 - Docker orchestration
-- PostgreSQL initialization order
 - Airflow dependency management
-- MinIO automation
 - dbt warehouse integration
-- Great Expectations configuration
-- JWT-secured API implementation
-- Container networking
-- Dependency compatibility issues
+- DataHub metadata ingestion
+- OpenSearch configuration
+- Kafka service coordination
+- MinIO Delta Lake management
+- JWT authentication
+- Dependency compatibility handling
 
 ---
 
 # Future Enhancements
 
-- AWS deployment
-- Kubernetes orchestration
+- Kubernetes deployment
 - CI/CD pipelines
-- Kafka streaming ingestion
-- Monitoring dashboards
-- Real-time analytics
-- Full metadata catalog integration
+- Real-time Kafka streaming
 - Spark transformations
+- Monitoring dashboards
+- Prometheus/Grafana
+- AWS cloud deployment
+- Automated lineage refresh
 
 ---
 
 # Conclusion
 
-This project demonstrates a scalable modern data engineering architecture using industry-standard tools for orchestration, ingestion, storage, transformation, validation, analytics serving, automated testing, security, and backup management.
+This project demonstrates a complete enterprise-style modern data engineering platform using orchestration, object storage, transformation, validation, metadata governance, lineage tracking, analytics warehousing, secure APIs, automated testing, and containerized infrastructure.
